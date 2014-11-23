@@ -26,7 +26,6 @@ strstd <- "std()"
 meanvalues <- c()
 stdvalues <- c()
 for (i in 1:length(features[,1])){
-    print 
     if (grepl(strmean, features[i,1]) > 0){
         meanvalues <- c(meanvalues, i)
     }
@@ -34,8 +33,8 @@ for (i in 1:length(features[,1])){
         stdvalues <- c(stdvalues, i)      
     }    
 }
-print(head(meanvalues))
-print(head(stdvalues))
+#print(head(meanvalues))
+#print(head(stdvalues))
 
 meandata <- alldata[meanvalues]
 stddata <- alldata[stdvalues]
@@ -53,7 +52,7 @@ datawnames <- cbind(datawnames, subjects)
 
 colnames(datawnames) <- c(as.vector(features[meanvalues, 1]), as.vector(features[stdvalues, 1]), "activity", "subject")
 
-print(head(datawnames))
+#print(head(datawnames))
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
